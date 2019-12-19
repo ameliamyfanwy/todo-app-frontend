@@ -1,8 +1,22 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from './Header';
 
-function App() {
+class App extends React.Component {
+  render() {
+    return (
+      <div className="container">
+        <Header />
+        <p>Hello there!!!</p>
+      </div>
+    );
+  }
+}
+
+export default App;
+
+/*function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -24,3 +38,4 @@ function App() {
 }
 
 export default App;
+*/
