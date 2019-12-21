@@ -4,7 +4,7 @@ class CatHeader extends React.Component {
     render() {
       return (
         <div>
-            <p>This will be my category header</p>
+            <h2>Header</h2>
         </div>
       );
     }
