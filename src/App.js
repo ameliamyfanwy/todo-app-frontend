@@ -1,11 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Task from './Task'
-import Tally from './Tally'
-import AddTask from './AddTask'
-import Header from './Header'
-import CatHeader from './CatHeader'
+import Header from './Header';
+import AddTask from './AddTask';
+import Tally from './Tally';
+import CatHeader from './CatHeader';
+import Task from './Task';
 
 class App extends React.Component {
   render() {
