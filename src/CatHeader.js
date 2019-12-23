@@ -6,7 +6,7 @@ class CatHeader extends React.Component {
       return (
         <div className="row CatHeader">
             <div className="col-12">
-                <h2>Header</h2>
+                <h2>{this.props.name}</h2>
             </div>
         </div>
       );

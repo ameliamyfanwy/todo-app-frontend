@@ -51,3 +51,7 @@ button {
   border-radius: 5px;
   width: 30px;
 }
+
+.taskdetails {
+  margin-top: 0.5px;
+}

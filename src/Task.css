@@ -4,7 +4,11 @@
 
 .task {
     text-align: left;
-    font-size: 0.75em;
-    padding: 0.25em 0 0.25em 0;
-    margin-top: 0.25em;
+    padding: 0.25em 0 0.25em 0.25em;
+    margin-top: 0.5em;
 }
+
+button {
+    font-size: 0.75em;
+}
+

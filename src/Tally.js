@@ -5,7 +5,7 @@ class Tally extends React.Component {
       return (
         <div className="row">
             <div className="col-12">
-                <p>Number of tasks to complete: 4</p>
+                <p>Number of tasks to complete: {this.props.count}</p>
             </div>
         </div>
       );

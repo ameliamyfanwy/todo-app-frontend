@@ -16,21 +16,21 @@ class App extends React.Component {
         <div className="container">
           <Header />
           <AddTask />
-          <Tally />
+          <Tally count="4" />
           <RadioButtons />
-          <div className="row">
+          <div className="row taskdetails">
             <div className="col-12 col-md-4">
-              <CatHeader />
-              <Task />
-              <Task />
+              <CatHeader name="Home" />
+              <Task name="Load dishwasher" />
+              <Task name="Take the bins out"/>
             </div>
             <div className="col-12 col-md-4">
-              <CatHeader />
-              <Task />
+              <CatHeader name="Work" />
+              <Task name="2020/21 OPEX budget" />
             </div>
             <div className="col-12 col-md-4">
-              <CatHeader />
-              <Task />
+              <CatHeader name="Life Admin" />
+              <Task name="Renew passport" />
             </div>
           </div>
         </div>
