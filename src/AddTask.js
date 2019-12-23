@@ -1,10 +1,11 @@
 import React from 'react';
+import './AddTask.css'
 
 class AddTask extends React.Component {
     render() {
       return (
-        <div class="row">
-            <div class="col-12">
+        <div className="row">
+            <div className="col-12 AddTask">
                 <form>
                 <label>
                     Add task here:

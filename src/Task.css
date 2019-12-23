@@ -1,1 +1,8 @@
-background-color: blue;
+.star {
+    float: right;
+}
+
+.task {
+    background-color: blue;
+}
+
