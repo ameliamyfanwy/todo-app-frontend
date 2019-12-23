@@ -5,7 +5,7 @@ class Task extends React.Component {
     render() {
       return (
         <div>
-            <div className="row">
+            <div className="row task">
                 <div className="col-12 col-md-9">
                     Circulate report
                     <button button type="button" className="star">&#9733;</button>

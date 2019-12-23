@@ -8,8 +8,7 @@ class AddTask extends React.Component {
             <div className="col-12 AddTask">
                 <form>
                 <label>
-                    Add task here:
-                    <input type="text" name="name" />
+                    <input type="text" name="inputbox" placeholder="Add task here" />
                 </label>
                 <input type="submit" value="+" />
                 </form>

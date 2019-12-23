@@ -1,3 +1,10 @@
 .AddTask {
     margin: 0.5em;
+    align-items: center;
+}
+
+input[type="text"] {
+    border-radius: 5px;
+    width: 270px;
+    padding-left: 0.5em;
 }

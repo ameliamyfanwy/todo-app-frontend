@@ -6,7 +6,7 @@ import AddTask from './AddTask';
 import Tally from './Tally';
 import CatHeader from './CatHeader';
 import Task from './Task';
-import EditButton from './EditButton';
+import RadioButtons from './RadioButtons';
 
 
 class App extends React.Component {
@@ -17,20 +17,22 @@ class App extends React.Component {
           <Header />
           <AddTask />
           <Tally />
-          <div className="col-12 col-md-4">
-            <CatHeader />
-            <Task />
-            <Task />
+          <RadioButtons />
+          <div className="row">
+            <div className="col-12 col-md-4">
+              <CatHeader />
+              <Task />
+              <Task />
+            </div>
+            <div className="col-12 col-md-4">
+              <CatHeader />
+              <Task />
+            </div>
+            <div className="col-12 col-md-4">
+              <CatHeader />
+              <Task />
+            </div>
           </div>
-          <div className="col-12 col-md-4">
-            <CatHeader />
-            <Task />
-          </div>
-          <div className="col-12 col-md-4">
-            <CatHeader />
-            <Task />
-          </div>
-          <EditButton />
         </div>
       </div>
     );

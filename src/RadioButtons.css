@@ -1,0 +1,12 @@
+.RadioButtons {
+    justify-content: space-around;
+    align-items: center;
+}
+
+label {
+    padding-right: 1em;
+}
+
+input[type="radio"] {
+    margin-left: 0.5em;
+}

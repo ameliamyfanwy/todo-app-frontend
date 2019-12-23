@@ -44,4 +44,10 @@
 
 body {
   background-color: #2F323A;
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+}
+
+button {
+  border-radius: 5px;
+  width: 30px;
 }
