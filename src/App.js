@@ -10,6 +10,16 @@ import RadioButtons from './RadioButtons';
 
 
 class App extends React.Component {
+
+  state {
+    tasks : [
+      {id: 1 description: "Load dishwasher" category:"Home" completed: false}
+      {id: 2 description: "Take the bins out" category:"Home" completed: false}
+      {id: 3 description: "2020/21 budget" category:"Work" completed: false}
+      {id: 4 description: "Renew passport" category:"Life Admin" completed: false}
+    ]
+  }
+
   render() {
     return (
       <div className="App">
