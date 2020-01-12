@@ -5,9 +5,9 @@ class Task extends React.Component {
     render() {
       return (
         <div>
-            <div className="row task" style={{backgroundColor : this.props.color}}>
+            <div className="row task">
                 <div className="col-12 col-md-9">
-                    {this.props.name}
+                    Test Task
                     <button button type="button" className="star">&#9733;</button>
                 </div>
                 <div className="col-4 col-md-1 px-0 editoption d-flex justify-content-center">

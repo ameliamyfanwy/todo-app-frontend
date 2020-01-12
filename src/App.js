@@ -6,6 +6,7 @@ import AddTask from './AddTask';
 import Tally from './Tally';
 import CatHeader from './CatHeader';
 import Task from './Task';
+import TaskList from './TaskList';
 import RadioButtons from './RadioButtons';
 
 
@@ -31,16 +32,16 @@ class App extends React.Component {
           <div className="row taskdetails">
             <div className="col-12 col-md-4">
               <CatHeader name="Home" />
-              <Task color="#77567A" name="Load dishwasher" />
-              <Task color="#77567A" name="Take the bins out" />
+              <TaskList color="#77567A" name="Load dishwasher" />
+              <TaskList color="#77567A" name="Take the bins out" />
             </div>
             <div className="col-12 col-md-4">
               <CatHeader name="Work" />
-              <Task color="#009999" name="2020/21 budget" />
+              <TaskList color="#009999" name="2020/21 budget" />
             </div>
             <div className="col-12 col-md-4">
               <CatHeader name="Life Admin" />
-              <Task color="#6495ED" name="Renew passport" />
+              <TaskList color="#6495ED" name="Renew passport" />
             </div>
           </div>
         </div>
