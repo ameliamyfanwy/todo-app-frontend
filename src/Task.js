@@ -7,7 +7,7 @@ class Task extends React.Component {
         <div>
             <div className="row task">
                 <div className="col-12 col-md-9">
-                    Test Task
+                    {this.props.item}
                     <button button type="button" className="star">&#9733;</button>
                 </div>
                 <div className="col-4 col-md-1 px-0 editoption d-flex justify-content-center">
