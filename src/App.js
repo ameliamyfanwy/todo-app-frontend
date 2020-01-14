@@ -32,15 +32,15 @@ class App extends React.Component {
           <div className="row taskdetails">
             <div className="col-12 col-md-4">
               <CatHeader name="Home" />
-              <TaskList taskGather={this.state.tasks} />
+              <TaskList taskGather={this.state.tasks} category="Home" />
             </div>
             <div className="col-12 col-md-4">
               <CatHeader name="Work" />
-              <TaskList taskGather={this.state.tasks} />
+              <TaskList taskGather={this.state.tasks} category="Work"/>
             </div>
             <div className="col-12 col-md-4">
               <CatHeader name="Life Admin" />
-              <TaskList taskGather={this.state.tasks} />
+              <TaskList taskGather={this.state.tasks} category="Life Admin"/>
             </div>
           </div>
         </div>
