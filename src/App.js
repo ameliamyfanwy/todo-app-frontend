@@ -21,6 +21,13 @@ class App extends React.Component {
     ]
   }
 
+  deleteTask = (taskId) => {
+      const updatedTasks = this.state.tasks.filter(item => item.id !== taskId);
+      this.setState({
+         tasks: updatedTasks
+      })
+  }
+
   render() {
     return (
       <div className="App">
@@ -32,15 +39,15 @@ class App extends React.Component {
           <div className="row taskdetails">
             <div className="col-12 col-md-4">
               <CatHeader name="Home" />
-              <TaskList taskGather={this.state.tasks} category="Home" color="#77567A" />
+              <TaskList taskGather={this.state.tasks} category="Home" color="#77567A" deleteTaskFunc={this.deleteTask} />
             </div>
             <div className="col-12 col-md-4">
               <CatHeader name="Work" />
-              <TaskList taskGather={this.state.tasks} category="Work" color="#009999" />
+              <TaskList taskGather={this.state.tasks} category="Work" color="#009999" deleteTaskFunc={this.deleteTask}  />
             </div>
             <div className="col-12 col-md-4">
               <CatHeader name="Life Admin" />
-              <TaskList taskGather={this.state.tasks} category="Life Admin" color="#6495ED" />
+              <TaskList taskGather={this.state.tasks} category="Life Admin" color="#6495ED" deleteTaskFunc={this.deleteTask}  />
             </div>
           </div>
         </div>
