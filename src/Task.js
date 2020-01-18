@@ -2,6 +2,16 @@ import React from 'react';
 import './Task.css'
 
 class Task extends React.Component {
+
+    deleteClicked = () => {
+        alert('You clicked the delete button')
+    }
+
+    editClicked = () => {
+        alert('You clicked the edit button')
+    }
+
+
     render() {
       return (
         <div>
@@ -14,10 +24,10 @@ class Task extends React.Component {
                     <button type="button">&#10004;</button>
                 </div>
                 <div className="col-4 col-md-1 px-0 editoption d-flex justify-content-center">
-                    <button type="button">&#9998;</button>
+                    <button type="button" onClick={this.editClicked}>&#9998;</button>
                 </div>
                 <div className="col-4 col-md-1 px-0 editoption d-flex justify-content-center">
-                    <button type="button">&#10008;</button>
+                    <button type="button" onClick={this.deleteClicked}>&#10008;</button>
                 </div>
             </div>
         </div>
