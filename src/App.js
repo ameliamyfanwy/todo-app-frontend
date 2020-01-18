@@ -26,16 +26,25 @@ class App extends React.Component {
       this.setState({
          tasks: updatedTasks
       })
+      console.log('deletingtask')
   }
 
+  addTask = () => {
+      const updatedTasksAdd = this.state.tasks.concat({id: 5, description: "Add task", category: "Home", completed: false});
+      this.setState({
+        tasks: updatedTasksAdd
+      })
+      console.log(updatedTasksAdd)
+  }
+  
   render() {
     return (
       <div className="App">
         <div className="container">
           <Header />
-          <AddTask />
-          <Tally count={this.state.tasks.length} />
+          <AddTask addTaskFunc={this.addTask}/>
           <RadioButtons />
+          <Tally count={this.state.tasks.length} />
           <div className="row taskdetails">
             <div className="col-12 col-md-4">
               <CatHeader name="Home" />
