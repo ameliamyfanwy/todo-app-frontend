@@ -8,7 +8,7 @@ class AddTask extends React.Component {
   }
 
   addTask = () => {
-    this.props.addTaskFunc(this.state.taskDescription, "Life Admin");
+    this.props.addTaskFunc(this.state.taskDescription);
   }
 
   taskDescriptionChanged = (event) => {

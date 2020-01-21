@@ -14,6 +14,7 @@ class RadioButtons extends React.Component {
                                     type="radio" 
                                     value="Home"
                                     name="radio"
+                                    checked={this.props.taskCategory === "Home"}
                                     onChange={this.props.onChange}
                                     />
                                     Home
@@ -23,6 +24,7 @@ class RadioButtons extends React.Component {
                                     type="radio"
                                     value="Work"
                                     name="radio"
+                                    checked={this.props.taskCategory === "Work"}
                                     onChange={this.props.onChange}
                                     />
                                     Work
@@ -32,6 +34,7 @@ class RadioButtons extends React.Component {
                                     type="radio"
                                     value="Life Admin"
                                     name="radio"
+                                    checked={this.props.taskCategory === "Life Admin"}
                                     onChange={this.props.onChange}
                                     />
                                     Life Admin

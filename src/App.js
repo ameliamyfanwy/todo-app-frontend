@@ -20,7 +20,7 @@ class App extends React.Component {
       { id: uuidv4(), description: "2020/21 budget", category: "Work", completed: false },
       { id: uuidv4(), description: "Renew passport", category: "Life Admin", completed: false },
     ],
-    taskCategory: "",
+    taskCategory: "Home",
   }
 
   deleteTask = (taskId) => {
@@ -60,7 +60,7 @@ class App extends React.Component {
         <div className="container">
           <Header />
           <AddTask addTaskFunc={this.addTask} />
-          <RadioButtons onChange={this.radioInputChanged} />
+          <RadioButtons onChange={this.radioInputChanged} taskCategory={this.state.taskCategory}/>
           <Tally count={this.state.tasks.length} />
           <div className="row taskdetails">
             <div className="col-12 col-md-4">
