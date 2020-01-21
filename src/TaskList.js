@@ -9,7 +9,7 @@ class TaskList extends React.Component {
                 {this.props.taskGather.filter(function (task) {
                     return task.category === category
                 })
-                    .map((taskItem) => <Task item={taskItem} color={this.props.color} deleteTaskFunc={this.props.deleteTaskFunc} />)}
+                    .map((taskItem) => <Task key={this.props.id} item={taskItem} color={this.props.color} deleteTaskFunc={this.props.deleteTaskFunc} />)}
             </div>
         )
 

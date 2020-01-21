@@ -8,17 +8,19 @@ import CatHeader from './CatHeader';
 import Task from './Task';
 import TaskList from './TaskList';
 import RadioButtons from './RadioButtons';
+import uuidv4 from 'uuid/v4';
 
 
 class App extends React.Component {
 
   state = {
     tasks: [
-      { id: 1, description: "Load dishwasher", category: "Home", completed: false },
-      { id: 2, description: "Take the bins out", category: "Home", completed: false },
-      { id: 3, description: "2020/21 budget", category: "Work", completed: false },
-      { id: 4, description: "Renew passport", category: "Life Admin", completed: false },
-    ]
+      { id: uuidv4(), description: "Load dishwasher", category: "Home", completed: false },
+      { id: uuidv4(), description: "Take the bins out", category: "Home", completed: false },
+      { id: uuidv4(), description: "2020/21 budget", category: "Work", completed: false },
+      { id: uuidv4(), description: "Renew passport", category: "Life Admin", completed: false },
+    ],
+    taskCategory: "",
   }
 
   deleteTask = (taskId) => {
@@ -30,17 +32,27 @@ class App extends React.Component {
 
   addTask = (taskDescription) => {
     const taskToAdd = {
-      id: 7,
+      id: uuidv4(),
       description: taskDescription,
-      category: "Home",
+      category: this.state.taskCategory,
       completed: false
     };
+    console.log("Add task");
+    console.log(taskToAdd);
     const currentTasks = this.state.tasks;
     currentTasks.push(taskToAdd);
     this.setState({
       tasks: currentTasks
     })
+
   }
+
+  radioInputChanged = (event) => {
+    this.setState({
+      taskCategory: event.target.value
+    });
+  }
+
 
   render() {
     return (
@@ -48,7 +60,7 @@ class App extends React.Component {
         <div className="container">
           <Header />
           <AddTask addTaskFunc={this.addTask} />
-          <RadioButtons />
+          <RadioButtons onChange={this.radioInputChanged} />
           <Tally count={this.state.tasks.length} />
           <div className="row taskdetails">
             <div className="col-12 col-md-4">
