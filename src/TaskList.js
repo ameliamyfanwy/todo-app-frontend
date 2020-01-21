@@ -6,9 +6,10 @@ class TaskList extends React.Component {
         const category = this.props.category
         return (
             <div>
-              {this.props.taskGather.filter(function (task) {
-                    return task.category === category})
-                    .map((taskItem)=><Task item={taskItem} color={this.props.color} deleteTaskFunc={this.props.deleteTaskFunc}/>)}
+                {this.props.taskGather.filter(function (task) {
+                    return task.category === category
+                })
+                    .map((taskItem) => <Task item={taskItem} color={this.props.color} deleteTaskFunc={this.props.deleteTaskFunc} />)}
             </div>
         )
 
