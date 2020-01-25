@@ -4,6 +4,8 @@ This is the front end of a To Do List Application, built as part of the Tech Ret
 
 A link to the hosted version of this application will also be available soon. 
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 ### Technology Used
 
 This project uses the following technologies:
