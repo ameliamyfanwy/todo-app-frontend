@@ -53,6 +53,9 @@ class App extends React.Component {
     });
   }
 
+  completeTask = (taskId) => {
+    alert(`You want to delete ${taskId}`);
+  }
 
   render() {
     return (
@@ -60,20 +63,20 @@ class App extends React.Component {
         <div className="container">
           <Header />
           <AddTask addTaskFunc={this.addTask} />
-          <RadioButtons onChange={this.radioInputChanged} taskCategory={this.state.taskCategory}/>
+          <RadioButtons onChange={this.radioInputChanged} taskCategory={this.state.taskCategory} />
           <Tally count={this.state.tasks.length} />
           <div className="row taskdetails">
             <div className="col-12 col-md-4">
               <CatHeader name="Home" />
-              <TaskList taskGather={this.state.tasks} category="Home" color="#77567A" deleteTaskFunc={this.deleteTask} />
+              <TaskList taskGather={this.state.tasks} category="Home" color="#77567A" deleteTaskFunc={this.deleteTask} completedTaskFunc={this.completeTask} />
             </div>
             <div className="col-12 col-md-4">
               <CatHeader name="Work" />
-              <TaskList taskGather={this.state.tasks} category="Work" color="#009999" deleteTaskFunc={this.deleteTask} />
+              <TaskList taskGather={this.state.tasks} category="Work" color="#009999" deleteTaskFunc={this.deleteTask} completedTaskFunc={this.completeTask} />
             </div>
             <div className="col-12 col-md-4">
               <CatHeader name="Life Admin" />
-              <TaskList taskGather={this.state.tasks} category="Life Admin" color="#6495ED" deleteTaskFunc={this.deleteTask} />
+              <TaskList taskGather={this.state.tasks} category="Life Admin" color="#6495ED" deleteTaskFunc={this.deleteTask} completedTaskFunc={this.completeTask} />
             </div>
           </div>
         </div>

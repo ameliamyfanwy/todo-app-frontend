@@ -8,7 +8,7 @@ class Task extends React.Component {
     }
 
     taskCompleted = () => {
-        alert(`You clicked done for task ${this.props.item.id}`)
+        this.props.completedTaskFunc(this.props.item.id)
     }
 
     render() {
