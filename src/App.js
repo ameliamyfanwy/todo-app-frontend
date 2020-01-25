@@ -54,7 +54,17 @@ class App extends React.Component {
   }
 
   completeTask = (taskId) => {
-    alert(`You want to delete ${taskId}`);
+    const tasksBeingUpdated = this.state.tasks;
+    for (let i=0; i<tasksBeingUpdated.length; i++) {
+      const task = tasksBeingUpdated[i];
+      if(task.id === taskId) {
+          task.completed = true;
+          break;
+      }
+    }
+    this.setState({
+      tasks: tasksBeingUpdated
+    })
   }
 
   render() {

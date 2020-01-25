@@ -55,3 +55,7 @@ button {
 .taskdetails {
   margin-top: 0.5px;
 }
+
+.completedTask {
+  text-decoration: line-through;
+}
