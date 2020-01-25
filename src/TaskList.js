@@ -7,7 +7,17 @@ class TaskList extends React.Component {
         return (
             <div>
                 {this.props.taskGather.filter(function (task) {
-                    return task.category === category
+                    return task.category === category && task.completed === false
+                })
+                    .map((taskItem) => <Task
+                                        key={this.props.id}
+                                        item={taskItem}
+                                        color={this.props.color}
+                                        deleteTaskFunc={this.props.deleteTaskFunc}
+                                        completedTaskFunc={this.props.completedTaskFunc} 
+                                        />)}
+                {this.props.taskGather.filter(function (task) {
+                    return task.category === category && task.completed
                 })
                     .map((taskItem) => <Task
                                         key={this.props.id}
