@@ -18,6 +18,10 @@ This application been designed and built with mobile-first reponsive principles 
 
 ### Running the application locally
 
+Install node.js if this is not already installed - to check if you already have this installed run:
+
+`node -v`
+
 To clone the application and install dependencies:
 
 `npm install`
@@ -26,7 +30,7 @@ To launch the application in development mode:
 
 `npm start`
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) if this doesn't launch automatically to view it in the browser.
 
 
 
