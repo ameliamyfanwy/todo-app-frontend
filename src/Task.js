@@ -19,7 +19,6 @@ class Task extends React.Component {
         if (this.props.item.completed ) {
             description = <div className="col-12 col-md-9 completedTask">
                             {this.props.item.description}
-                            <button button type="button" className="star">&#9733;</button>
                           </div>;
             taskStyle = { backgroundColor: "#d9d3d9"};
         } else {
