@@ -30,7 +30,6 @@ class Task extends React.Component {
             taskStyle = { backgroundColor: this.props.color };
         }
 
-
         return (
             <div>
                 <div className="row task" style={taskStyle}>
