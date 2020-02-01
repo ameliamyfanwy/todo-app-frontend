@@ -4,30 +4,23 @@ import Task from './Task';
 class TaskList extends React.Component {
     render() {
         const category = this.props.category
+        var sortedTasks = this.props.taskGather.sort(function (a, b) {
+            return a.completed - b.completed
+        })
         return (
             <div>
-                {this.props.taskGather.filter(function (task) {
-                    return task.category === category && task.completed === false
+                {sortedTasks.filter(function (task) {
+                    return task.category === category
                 })
                     .map((taskItem) => <Task
-                                        key={this.props.id}
-                                        item={taskItem}
-                                        color={this.props.color}
-                                        deleteTaskFunc={this.props.deleteTaskFunc}
-                                        completedTaskFunc={this.props.completedTaskFunc} 
-                                        />)}
-                {this.props.taskGather.filter(function (task) {
-                    return task.category === category && task.completed
-                })
-                    .map((taskItem) => <Task
-                                        key={this.props.id}
-                                        item={taskItem}
-                                        color={this.props.color}
-                                        deleteTaskFunc={this.props.deleteTaskFunc}
-                                        completedTaskFunc={this.props.completedTaskFunc} 
-                                        />)}
+                        key={this.props.id}
+                        item={taskItem}
+                        color={this.props.color}
+                        deleteTaskFunc={this.props.deleteTaskFunc}
+                        completedTaskFunc={this.props.completedTaskFunc}
+                    />)}
             </div>
-            
+
         )
 
     }
