@@ -63,7 +63,7 @@ class App extends React.Component {
       }
     }
     this.setState({
-      tasks: tasksBeingUpdated
+      tasks: tasksBeingUpdated.sort((a, b) => a.completed > b.completed)
     })
   }
 

@@ -27,6 +27,7 @@ class TaskList extends React.Component {
                                         completedTaskFunc={this.props.completedTaskFunc} 
                                         />)}
             </div>
+            
         )
 
     }
