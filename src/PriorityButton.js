@@ -15,9 +15,9 @@ class PriorityButton extends React.Component {
     }
 
     render () {
-        let content = "edit"
+        let content = ['far', 'star']
         if (this.state.priority) {
-            content ="trash"
+            content = ['fas', 'star']
         }
         return (
         <button button type="button" className="star" onClick={this.togglePriority}>

@@ -9,9 +9,9 @@ import RadioButtons from './RadioButtons';
 import uuidv4 from 'uuid/v4';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTrash, faEdit, faCheck, faStar as fasFaStar} from '@fortawesome/free-solid-svg-icons';
-//import { faStar as farFaStar } from '@fortawesome/free-regular-svg-icons';
+import { faStar as farFaStar} from '@fortawesome/free-regular-svg-icons';
 
-library.add(faTrash, faEdit, faCheck, fasFaStar) ;
+library.add(faTrash, faEdit, faCheck, fasFaStar, farFaStar) ;
 
 
 class App extends React.Component {
