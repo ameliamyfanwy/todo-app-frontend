@@ -4,7 +4,7 @@ class Tally extends React.Component {
 
     render() {
 
-      let outstandingTasks = this.props.taskGather.filter(task => task.completed != true);
+      let outstandingTasks = this.props.taskGather.filter(task => task.completed !== true);
       const outstandingCount = outstandingTasks.length;
 
       return (

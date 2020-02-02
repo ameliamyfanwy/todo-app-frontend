@@ -1,5 +1,6 @@
 import React from 'react';
 import './Task.css'
+import PriorityButton from './PriorityButton';
 
 class Task extends React.Component {
 
@@ -24,7 +25,7 @@ class Task extends React.Component {
         } else {
             description =   <div className="col-12 col-md-9">
                                 {this.props.item.description}
-                                <button button type="button" className="star">&#9733;</button>
+                                <PriorityButton />
                             </div>;
             taskStyle = { backgroundColor: this.props.color };
         }

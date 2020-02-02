@@ -1,11 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Header from './Header';
 import AddTask from './AddTask';
 import Tally from './Tally';
 import CatHeader from './CatHeader';
-import Task from './Task';
 import TaskList from './TaskList';
 import RadioButtons from './RadioButtons';
 import uuidv4 from 'uuid/v4';
