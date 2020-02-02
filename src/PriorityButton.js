@@ -1,4 +1,5 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class PriorityButton extends React.Component {
 
@@ -14,15 +15,16 @@ class PriorityButton extends React.Component {
     }
 
     render () {
-        let content = null;
+        let content = "edit"
         if (this.state.priority) {
-            content = "&#9733;"
-        }
-        else {
-            content = "&#9734;"
+            content ="trash"
         }
         return (
-        <button button type="button" className="star" onClick={this.togglePriority}>{content}</button>
+        <button button type="button" className="star" onClick={this.togglePriority}>
+            <FontAwesomeIcon 
+                icon={content}
+            />
+        </button>
         )
     }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import './Task.css'
 import PriorityButton from './PriorityButton';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Task extends React.Component {
 
@@ -36,14 +37,26 @@ class Task extends React.Component {
                     {description}
                     <div className="col-4 col-md-1 px-0 editoption d-flex justify-content-center">
                         {!this.props.item.completed &&
-                        <button type="button" onClick={this.taskCompleted}>&#10004;</button>
+                        <button type="button" onClick={this.taskCompleted}>
+                            <FontAwesomeIcon
+                                icon="check"
+                            />
+                        </button>
                         }
                     </div>
                     <div className="col-4 col-md-1 px-0 editoption d-flex justify-content-center">
-                        <button type="button" onClick={this.editClicked}>&#9998;</button>
+                        <button type="button" onClick={this.editClicked}>
+                            <FontAwesomeIcon
+                                icon="edit"
+                            />
+                        </button>
                     </div>
                     <div className="col-4 col-md-1 px-0 editoption d-flex justify-content-center">
-                        <button type="button" onClick={this.deleteClicked}>&#10008;</button>
+                        <button type="button" onClick={this.deleteClicked}>
+                            <FontAwesomeIcon
+                                icon="trash"
+                            />
+                        </button>
                     </div>
                 </div>
             </div>
