@@ -4,12 +4,15 @@ import Task from './Task';
 class TaskList extends React.Component {
     render() {
         const category = this.props.category
-        var sortedTasks = this.props.taskGather.sort(function (a, b) {
+        var sortedByComplete = this.props.taskGather.sort(function (a, b) {
             return a.completed - b.completed
+        })
+        var sortedByPriority = sortedByComplete.sort(function (a, b) {
+            return b.priority - a.priority
         })
         return (
             <div>
-                {sortedTasks.filter(function (task) {
+                {sortedByPriority.filter(function (task) {
                     return task.category === category
                 })
                     .map((taskItem) => <Task

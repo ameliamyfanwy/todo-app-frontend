@@ -10,6 +10,7 @@ import uuidv4 from 'uuid/v4';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faTrash, faEdit, faCheck, faStar as fasFaStar} from '@fortawesome/free-solid-svg-icons';
 import { faStar as farFaStar} from '@fortawesome/free-regular-svg-icons';
+import axios from 'axios';
 
 library.add(faTrash, faEdit, faCheck, fasFaStar, farFaStar) ;
 
@@ -18,12 +19,20 @@ class App extends React.Component {
 
   state = {
     tasks: [
-      { id: uuidv4(), description: "Load dishwasher", category: "Home", completed: false },
-      { id: uuidv4(), description: "Take the bins out", category: "Home", completed: false },
-      { id: uuidv4(), description: "2020/21 budget", category: "Work", completed: false },
-      { id: uuidv4(), description: "Renew passport", category: "Life Admin", completed: false },
     ],
     taskCategory: "Home",
+  }
+
+  componentDidMount = () => {
+    axios.get('https://nny7t787v2.execute-api.eu-west-2.amazonaws.com/dev/tasks')
+    .then((response) => {
+      this.setState({
+        tasks: response.data.todolist
+      })
+    })
+    .catch((error) => {
+      console.error(error);
+    });
   }
 
   deleteTask = (taskId) => {
@@ -81,7 +90,10 @@ class App extends React.Component {
           <div className="row taskdetails">
             <div className="col-12 col-md-4">
               <CatHeader name="Home" />
-              <TaskList taskGather={this.state.tasks} category="Home" color="#77567A" deleteTaskFunc={this.deleteTask} completedTaskFunc={this.completeTask} />
+              <TaskList taskGather={this.state.tasks} category="Home" color="#77567A"
+                deleteTaskFunc={this.deleteTask}
+                completedTaskFunc={this.completeTask}
+              />
             </div>
             <div className="col-12 col-md-4">
               <CatHeader name="Work" />
