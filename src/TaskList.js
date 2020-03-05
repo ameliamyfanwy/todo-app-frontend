@@ -21,6 +21,7 @@ class TaskList extends React.Component {
                         color={this.props.color}
                         deleteTaskFunc={this.props.deleteTaskFunc}
                         completedTaskFunc={this.props.completedTaskFunc}
+                        priorityTaskFunc={this.props.priorityTaskFunc}
                     />)}
             </div>
 

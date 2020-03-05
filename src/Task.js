@@ -6,11 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 class Task extends React.Component {
 
     deleteClicked = () => {
-        this.props.deleteTaskFunc(this.props.item.id)
+        this.props.deleteTaskFunc(this.props.item.taskId)
     }
 
     taskCompleted = () => {
-        this.props.completedTaskFunc(this.props.item.id)
+        this.props.completedTaskFunc(this.props.item.taskId)
     }
 
     render() {
@@ -26,7 +26,7 @@ class Task extends React.Component {
         } else {
             description =   <div className="col-12 col-md-9">
                                 {this.props.item.description}
-                                <PriorityButton />
+                                <PriorityButton priorityTaskFunc={this.props.priorityTaskFunc}/>
                             </div>;
             taskStyle = { backgroundColor: this.props.color };
         }

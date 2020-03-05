@@ -35,28 +35,39 @@ class App extends React.Component {
     });
   }
 
-  deleteTask = (taskId) => {
-    const updatedTasks = this.state.tasks.filter(item => item.id !== taskId);
-    this.setState({
-      tasks: updatedTasks
+  deleteTask = taskId => {
+    axios.delete(`https://nny7t787v2.execute-api.eu-west-2.amazonaws.com/dev/tasks/${taskId}`)
+    .then((response) =>{
+      const updatedTasks = this.state.tasks.filter(item => item.taskId !== taskId);
+      this.setState({
+        tasks: updatedTasks
+      });
     })
+    .catch((error) => {
+      console.error(error);
+    });
   }
 
-  addTask = (taskDescription) => {
+  addTask = taskDescription => {
     const taskToAdd = {
-      id: uuidv4(),
+      //id: uuidv4(),
       description: taskDescription,
       category: this.state.taskCategory,
-      completed: false
+      completed: false,
+      priority: 0
     };
-    console.log("Add task");
-    console.log(taskToAdd);
-    const currentTasks = this.state.tasks;
-    currentTasks.push(taskToAdd);
-    this.setState({
-      tasks: currentTasks
+    axios.post('https://nny7t787v2.execute-api.eu-west-2.amazonaws.com/dev/tasks', taskToAdd)
+    .then((response) => {
+      taskToAdd.taskId = response.data.task.taskId;
+      const currentTasks = this.state.tasks;
+      currentTasks.push(taskToAdd);
+      this.setState({
+        tasks: currentTasks
+      })
     })
-
+    .catch((error) => {
+      console.error(error);
+    });
   }
 
   radioInputChanged = (event) => {
@@ -65,19 +76,50 @@ class App extends React.Component {
     });
   }
 
-  completeTask = (taskId) => {
+  completeTask = (taskId, completed) => {
     const tasksBeingUpdated = this.state.tasks;
     for (let i=0; i<tasksBeingUpdated.length; i++) {
       const task = tasksBeingUpdated[i];
-      if(task.id === taskId) {
+      if(task.taskId === taskId) {
           task.completed = true;
           break;
       }
     }
-    this.setState({
-      tasks: tasksBeingUpdated.sort((a, b) => a.completed > b.completed)
+    const editedTask = tasksBeingUpdated.find((task) => task.taskId === taskId);
+    axios.put(`https://nny7t787v2.execute-api.eu-west-2.amazonaws.com/dev/tasks/${taskId}`, editedTask)
+    .then((response) => {
+      this.setState({
+        tasks: tasksBeingUpdated.sort((a, b) => a.completed > b.completed)
+      })
     })
+    .catch((error) => {
+      console.error(error);
+    });
   }
+
+  //Need to replicate completed but for priority button
+
+  priorityTask = (taskId, priority) => {
+    const tasksBeingUpdated = this.state.tasks;
+    for (let i=0; i<tasksBeingUpdated.length; i++) {
+      const task = tasksBeingUpdated[i];
+      if(task.taskId === taskId) {
+          task.priority = true;
+          break;
+      }
+    }
+    const editedTask = tasksBeingUpdated.find((task) => task.taskId === taskId);
+    axios.put(`https://nny7t787v2.execute-api.eu-west-2.amazonaws.com/dev/tasks/${taskId}`, editedTask)
+    .then((response) => {
+      this.setState({
+        tasks: tasksBeingUpdated.sort((a, b) => a.priority < b.priority)
+      })
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+  }
+
 
   render() {
     return (
@@ -93,6 +135,7 @@ class App extends React.Component {
               <TaskList taskGather={this.state.tasks} category="Home" color="#77567A"
                 deleteTaskFunc={this.deleteTask}
                 completedTaskFunc={this.completeTask}
+                priorityTaskFunc={this.priorityTask}
               />
             </div>
             <div className="col-12 col-md-4">

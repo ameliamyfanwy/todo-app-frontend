@@ -8,6 +8,8 @@ class PriorityButton extends React.Component {
     }
 
     togglePriority = () => {
+        //this.props.priorityTaskFunc(this.props.item.taskId)
+
         const currentPriority = this.state.priority;
         this.setState({
             priority: !currentPriority
