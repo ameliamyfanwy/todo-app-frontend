@@ -89,7 +89,7 @@ class App extends React.Component {
     axios.put(`https://nny7t787v2.execute-api.eu-west-2.amazonaws.com/dev/tasks/${taskId}`, editedTask)
     .then((response) => {
       this.setState({
-        tasks: tasksBeingUpdated.sort((a, b) => a.completed > b.completed)
+        tasks: tasksBeingUpdated
       })
     })
     .catch((error) => {
@@ -112,7 +112,7 @@ class App extends React.Component {
     axios.put(`https://nny7t787v2.execute-api.eu-west-2.amazonaws.com/dev/tasks/${taskId}`, editedTask)
     .then((response) => {
       this.setState({
-        tasks: tasksBeingUpdated.sort((a, b) => a.priority < b.priority)
+        tasks: tasksBeingUpdated
       })
     })
     .catch((error) => {
@@ -140,7 +140,9 @@ class App extends React.Component {
             </div>
             <div className="col-12 col-md-4">
               <CatHeader name="Work" />
-              <TaskList taskGather={this.state.tasks} category="Work" color="#009999" deleteTaskFunc={this.deleteTask} completedTaskFunc={this.completeTask} />
+              <TaskList taskGather={this.state.tasks} category="Work" color="#009999"
+                deleteTaskFunc={this.deleteTask}
+                completedTaskFunc={this.completeTask} />
             </div>
             <div className="col-12 col-md-4">
               <CatHeader name="Life Admin" />

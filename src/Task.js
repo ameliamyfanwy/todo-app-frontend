@@ -26,7 +26,9 @@ class Task extends React.Component {
         } else {
             description =   <div className="col-12 col-md-9">
                                 {this.props.item.description}
-                                <PriorityButton priorityTaskFunc={this.props.priorityTaskFunc}/>
+                                <PriorityButton
+                                priorityTaskFunc={this.props.priorityTaskFunc}
+                                taskId = {this.props.taskId}/>
                             </div>;
             taskStyle = { backgroundColor: this.props.color };
         }
