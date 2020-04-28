@@ -4,15 +4,16 @@ import Task from './Task';
 class TaskList extends React.Component {
     render() {
         const category = this.props.category
-        var sortedByComplete = this.props.taskGather.sort(function (a, b) {
-            return a.completed - b.completed
-        })
-        var sortedByPriority = sortedByComplete.sort(function (a, b) {
+        var sortedByPriority = this.props.taskGather.sort(function (a, b) {
             return b.priority - a.priority
         })
+        var sortedByComplete = sortedByPriority.sort(function (a, b) {
+            return a.completed - b.completed
+        })
+        //Priority is not being updated by the priority button
         return (
             <div>
-                {sortedByPriority.filter(function (task) {
+                {sortedByComplete.filter(function (task) {
                     return task.category === category
                 })
                     .map((taskItem) => <Task

@@ -3,26 +3,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class PriorityButton extends React.Component {
 
-    state = {
-        priority: false
-    }
-
-    togglePriority = () => {
-        //this.props.priorityTaskFunc(this.props.item.taskId)
-
-        const currentPriority = this.state.priority;
-        this.setState({
-            priority: !currentPriority
-        })
+    taskPriority = () => {
+        this.props.priorityTaskFunc(this.props.task.taskId)
     }
 
     render () {
         let content = ['far', 'star']
-        if (this.state.priority) {
+        if (this.props.task.priority) {
             content = ['fas', 'star']
         }
         return (
-        <button button type="button" className="star" onClick={this.togglePriority}>
+        <button button type="button" className="star" onClick={this.taskPriority}>
             <FontAwesomeIcon 
                 icon={content}
             />
