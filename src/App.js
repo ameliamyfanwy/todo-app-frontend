@@ -104,7 +104,7 @@ class App extends React.Component {
     for (let i=0; i<tasksBeingUpdated.length; i++) {
       const task = tasksBeingUpdated[i];
       if(task.taskId === taskId) {
-          task.priority = true;
+          task.priority = !task.priority;
           break;
       }
     }
@@ -142,11 +142,12 @@ class App extends React.Component {
               <CatHeader name="Work" />
               <TaskList taskGather={this.state.tasks} category="Work" color="#009999"
                 deleteTaskFunc={this.deleteTask}
-                completedTaskFunc={this.completeTask} />
+                completedTaskFunc={this.completeTask}
+                priorityTaskFunc={this.priorityTask}/>
             </div>
             <div className="col-12 col-md-4">
               <CatHeader name="Life Admin" />
-              <TaskList taskGather={this.state.tasks} category="Life Admin" color="#6495ED" deleteTaskFunc={this.deleteTask} completedTaskFunc={this.completeTask} />
+              <TaskList taskGather={this.state.tasks} category="Life Admin" color="#6495ED" deleteTaskFunc={this.deleteTask} completedTaskFunc={this.completeTask} priorityTaskFunc={this.priorityTask} />
             </div>
           </div>
         </div>

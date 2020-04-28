@@ -28,7 +28,8 @@ class Task extends React.Component {
                                 {this.props.item.description}
                                 <PriorityButton
                                 priorityTaskFunc={this.props.priorityTaskFunc}
-                                taskId = {this.props.taskId}/>
+                                taskId = {this.props.taskId}
+                                task = {this.props.item} />
                             </div>;
             taskStyle = { backgroundColor: this.props.color };
         }
