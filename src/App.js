@@ -100,6 +100,7 @@ class App extends React.Component {
   //Need to replicate completed but for priority button
 
   priorityTask = (taskId, priority) => {
+    console.log("this is working");
     const tasksBeingUpdated = this.state.tasks;
     for (let i=0; i<tasksBeingUpdated.length; i++) {
       const task = tasksBeingUpdated[i];
