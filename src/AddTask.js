@@ -9,6 +9,10 @@ class AddTask extends React.Component {
 
   addTask = () => {
     this.props.addTaskFunc(this.state.taskDescription);
+    this.mainInput.value = "";
+    this.setState({
+      taskDescription : ''
+    });
   }
 
   taskDescriptionChanged = (event) => {
@@ -23,6 +27,7 @@ class AddTask extends React.Component {
         <div className="col-12 AddTask">
           <label>
             <input
+              ref={(ref) => this.mainInput= ref}
               type="text"
               name="inputbox"
               placeholder="Add task here"
